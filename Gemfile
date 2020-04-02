@@ -16,6 +16,15 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+gem 'carrierwave', '~> 2.1'
+gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
+gem 'ovirt-engine-sdk', '~> 4.3'
+gem 'fog-aws', '~> 3.6', '>= 3.6.2'
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -39,6 +48,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :development do
@@ -48,6 +62,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'better_errors', '~> 2.6'
+
+  gem "database_cleaner"
+  gem "rspec-rails"
 end
 
 group :test do
