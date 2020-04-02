@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <i class="fas <%= @group.icon %> fa-5x"></i>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @group.user.name %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>
+
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4 d-flex justify-content-center">
+      <i class="fas <%= @group.icon %> fa-5x card-img align-self-center" ></i>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"> <%= @group.name %></h5>
+        <p class="card-text">Created at: <%= @group.created_at %></p>
+      </div>
+    </div>
+  </div>
+</div>

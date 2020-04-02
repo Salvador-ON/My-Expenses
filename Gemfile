@@ -24,6 +24,7 @@ gem 'fog-aws', '~> 3.6', '>= 3.6.2'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+gem 'font_awesome5_rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
