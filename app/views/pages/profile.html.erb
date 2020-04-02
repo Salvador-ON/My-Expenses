@@ -1,4 +1,4 @@
-<h1>Profile #home</h1>
+<h1>Profile #profile</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
   <%=image_tag(current_user.avatar.url(:thumb))%>
@@ -7,7 +7,7 @@
   <h3><%=current_user.name %></h3>
   <h3>user_id:<%=current_user.id %></h3>
 
-  <h3>All my transactions</h3>
+  <h3><%= link_to "My Transactions", '/transactions' %></h3>
 
   <h3>All my external transactions</h3>
 

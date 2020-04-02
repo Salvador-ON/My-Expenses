@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Transactions</h1>
+
+    <% @user_transactions.each do |transaction| %>
+
+    <div class="card mb-3" style="max-width: 340px;">
+        <div class="row no-gutters">
+          <div class="col-md-4 d-flex justify-content-center">
+            <i class="fas <%= transaction.icon %> fa-4x card-img align-self-center" ></i>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"> <%= transaction.name %></h5>
+              <p class="card-text"> Spent by:<%= transaction.uname %></p>
+              <p class="card-text"> Category group:<%= transaction.gname %></p>
+              <p class="card-text">Date: <%= transaction.created_at.strftime('%d %b %Y') %></p>
+              <%= link_to "Edit", "/transactions/#{transaction.id}/edit" %>
+            </div>
+           </div>
+        </div>
+      </div>
+      
+    <% end %>
+ 
+
+<%= link_to 'New Transaction', new_transaction_path %>

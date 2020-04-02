@@ -12,12 +12,15 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"button is-dark" %>
-    <%= link_to 'Sign in', new_user_session_path %>
-    <%= link_to "Sign up", new_user_registration_path %>
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"button is-dark" %>|
+    <%= link_to 'Profile', '/profile' %>|
+    <%= link_to "Sign up", new_user_registration_path %>|
     
-    <%= link_to "Groups", '/groups' %>
-    <%= link_to "New group", 'newgroup' %>
+    <%= link_to "Groups", '/groups' %>|
+    <%= link_to "New group", 'newgroup' %>|
+    <%= link_to 'New Transaction', new_transaction_path %>|
+
+    <%= link_to "Transactions", '/transactions' %>|
     <%= yield %>
   </body>
 </html>
