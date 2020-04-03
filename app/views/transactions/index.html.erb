@@ -2,6 +2,12 @@
 
 <h1>Transactions</h1>
 
+    <div class="card">
+      <div class="card-body">
+        <span>Total Amount</span> <span> <%= @transaction_sum %></span>
+      </div>
+    </div>
+
     <% @user_transactions.each do |transaction| %>
 
     <div class="card mb-3" style="max-width: 340px;">
@@ -12,8 +18,9 @@
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title"> <%= transaction.name %></h5>
+              <p class="card-text"> Amount:<%= transaction.amount %></p>
               <p class="card-text"> Spent by:<%= transaction.uname %></p>
-              <p class="card-text"> Category group:<%= transaction.gname %></p>
+              <p class="card-text"> Category:<%= transaction.gname %></p>
               <p class="card-text">Date: <%= transaction.created_at.strftime('%d %b %Y') %></p>
               <%= link_to "Edit", "/transactions/#{transaction.id}/edit" %>
             </div>

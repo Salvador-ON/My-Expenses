@@ -13,6 +13,7 @@
             <div class="card-body">
               <h5 class="card-title"> <%= group.name %></h5>
               <p class="card-text">Created: <%= group.created_at.strftime('%d %b %Y') %></p>
+              <a href="/groups/<%= group.id %>" class="card-link">Access</a>
             </div>
            </div>
         </div>

@@ -5,7 +5,9 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @user_transactions = Transaction.where(user_id: current_user.id).joins(:group).joins(:user).select('transactions.name, transactions.id, transactions.user_id, transactions.created_at, groups.icon , groups.name as gname, users.name as uname').order(created_at: :desc)
+    @user_transactions = Transaction.where(user_id: current_user.id).joins(:group).joins(:user).select('transactions.name, transactions.id, transactions.amount, transactions.user_id, transactions.created_at, groups.icon , groups.name as gname, users.name as uname').order(created_at: :desc)
+
+    @transaction_sum = @user_transactions.sum(:amount)
     
   end
 
@@ -62,6 +64,13 @@ class TransactionsController < ApplicationController
       format.html { redirect_to transactions_url, notice: 'Transaction was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def etransaction
+    @ext_user_transaction = Transaction.where(user_id: current_user.id, group_id: nil).joins(:user).select('transactions.name, transactions.id, transactions.amount, transactions.user_id, transactions.created_at, users.name as uname').order(created_at: :desc)
+
+    @ext_transaction_sum = @ext_user_transaction.sum(:amount)
+
   end
 
   private

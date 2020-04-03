@@ -6,7 +6,7 @@
   <div class="form-inputs">
     <%= f.input :name, required: true %>
     <%= f.input :amount,required: true %>
-    <%= f.association :group, collection: Group.where(user_id: current_user.id), required: false, include_blank: "" %>
+    <%= f.association :group, required: false, include_blank: "" %>
   </div>
 
 

@@ -4,12 +4,15 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = current_user.groups
+    @groups = Group.all
   end
 
   # GET /groups/1
   # GET /groups/1.json
   def show
+    @group_transactions = Transaction.where(group_id: params[:id]).joins(:group).joins(:user).select('transactions.name, transactions.id, transactions.amount, transactions.user_id, transactions.created_at, groups.icon , groups.name as gname, users.name as uname').order(created_at: :desc)
+
+    @group_transaction_sum = @group_transactions.sum(:amount)
   end
 
   # GET /groups/new
