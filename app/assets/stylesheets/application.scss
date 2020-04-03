@@ -94,7 +94,20 @@ label {
 
 .background-profile{
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background: rgb(48,132,193);
   background: linear-gradient(15deg, rgba(48,132,193,1) 0%, rgba(19,50,94,1) 100%);
+}
+
+.cont-background{
+  min-height: 6%;
+  background: rgb(37, 103, 157)
+}
+
+.card-transaction{
+  width: 95%;
+}
+
+.total-card-transaction{
+  margin-top: 11%;
 }
