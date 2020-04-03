@@ -1,13 +1,43 @@
-<h1>Profile #profile</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="background-profile container-fluid ">
 
-  <%=image_tag(current_user.avatar.url(:thumb))%>
+  <div class="container-fluid pt-4 mt-4">
+    <div class="row">
+      <div class="col-12  d-flex justify-content-center mt-4">
+        <%=image_tag(current_user.avatar.url(:thumb))%>
+      </div>
 
-  <h2>Hello</h2>
-  <h3><%=current_user.name %></h3>
-  <h3>user_id:<%=current_user.id %></h3>
+      <div class="col-12  d-flex justify-content-center">
+        <p class="display-4 text-white"><%=current_user.name%></p>
+      </div>
 
-  <h3><%= link_to "My Transactions", '/transactions' %></h3>
-  <h3><%= link_to "My External Transactions", '/etransactions' %></h3>
-  <h3><%= link_to "All Groups", '/groups' %>|</h3>
+      <div class="col-2  d-flex justify-content-center align-items-center mt-4 mb-4">
+        <span class="border border-white rounded-circle"><i class="fas fa-file-invoice-dollar display-3 text-white mx-4 my-3 "></i></span> 
+      </div>
+      <div class="col-10  d-flex justify-content-start align-items-center border-bottom border-white">
+        <a href="/transactions" class="display-4 m-1">My expenses</a>
+      </div>
+    
+      <div class="col-2  d-flex justify-content-center align-items-center mt-4 mb-4">
+        <span class="border border-white rounded-circle"><i class="fas fa-file-invoice-dollar display-3 text-white mx-4  my-3 "></i></span> 
+      </div>
+      <div class="col-10  d-flex justify-content-start align-items-center border-bottom border-white">
+        <a href="/etransactions" class="display-4 m-1">Non grouped expenses</a>
+      </div>
+
+      <div class="col-2  d-flex justify-content-center align-items-center mt-4 mb-4">
+        <span class="border border-white rounded-circle"><i class="fas fa-file-invoice-dollar display-3 text-white mx-4 my-3 "></i></span> 
+      </div>
+      <div class="col-10  d-flex justify-content-start align-items-center border-bottom border-white">
+        <a href="/groups" class="display-4 m-1">Groups</a>
+      </div>
+
+      <div class="col-2  d-flex justify-content-center align-items-center mt-4 mb-4">
+        <span class="border border-white rounded-circle"><i class="fas fa-file-invoice-dollar display-3 text-white mx-4 my-3 "></i></span> 
+      </div>
+      <div class="col-10  d-flex justify-content-start align-items-center border-bottom border-white">
+        <a href="/memberstransactions" class="display-4 m-1">Members expenses</a>
+      </div>
+    </div>
+  </div>
+</div>
 

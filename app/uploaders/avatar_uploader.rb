@@ -3,9 +3,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
-  
-  #storage :file
-  
+  # storage :file
+
   if Rails.env.production?
     storage :fog
   else
@@ -34,23 +33,20 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-    version :thumb do
-     process resize_to_fit: [50, 50]
-    end
+  version :thumb do
+    process resize_to_fit: [200, 200]
+  end
 
-    version :full do
-      process resize_to_fit: [800, 800]
-     end
-
-     
+  # version :full do
+  #   process resize_to_fit: [800, 800]
+  # end
 
   # Add a white list of extensions which are allowed to be uploaded.
 
   def extension_whitelist
-    %w(jpg jpeg gif png)
+    %w[jpg jpeg gif png]
   end
   # For images you might use something like this:
-  
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

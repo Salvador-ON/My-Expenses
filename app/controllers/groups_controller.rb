@@ -1,16 +1,22 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: %i[show edit update destroy]
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.all.order(created_at: :desc)
   end
 
   # GET /groups/1
   # GET /groups/1.json
   def show
-    @group_transactions = Transaction.where(group_id: params[:id]).joins(:group).joins(:user).select('transactions.name, transactions.id, transactions.amount, transactions.user_id, transactions.created_at, groups.icon , groups.name as gname, users.name as uname').order(created_at: :desc)
+    s_str = 'transactions.name, transactions.id, transactions.amount, transactions.user_id'
+
+    s_str2 = ', transactions.created_at, groups.icon , groups.name as gname, users.name as uname'
+
+    @group_transactions = Transaction.where(group_id: params[:id]).joins(:group).joins(:user).select(s_str + s_str2)
+
+    @group_transactions = @group_transactions.order(created_at: :desc)
 
     @group_transaction_sum = @group_transactions.sum(:amount)
   end
@@ -21,22 +27,20 @@ class GroupsController < ApplicationController
   end
 
   # GET /groups/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /groups
   # POST /groups.json
   def create
     @group = Group.new(group_params)
-    @group.user_id = current_user.id 
+    @group.user_id = current_user.id
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
-        format.json { render :show, status: :created, location: @group }
+        format.html { redirect_to '/groups', notice: 'Group was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
+
       end
     end
   end
@@ -46,11 +50,9 @@ class GroupsController < ApplicationController
   def update
     respond_to do |format|
       if @group.update(group_params)
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
-        format.json { render :show, status: :ok, location: @group }
+        format.html { redirect_to '/groups', notice: 'Group was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -61,18 +63,18 @@ class GroupsController < ApplicationController
     @group.destroy
     respond_to do |format|
       format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_group
-      @group = Group.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def group_params
-      params.require(:group).permit(:name, :icon, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_group
+    @group = Group.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def group_params
+    params.require(:group).permit(:name, :icon, :user_id)
+  end
 end

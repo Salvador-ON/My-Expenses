@@ -1,20 +1,24 @@
 class TransactionsController < ApplicationController
-  before_action :set_transaction, only: [:show, :edit, :update, :destroy]
-  
+  before_action :authenticate_user!
+  before_action :set_transaction, only: %i[show edit update destroy]
 
   # GET /transactions
   # GET /transactions.json
   def index
-    @user_transactions = Transaction.where(user_id: current_user.id).joins(:group).joins(:user).select('transactions.name, transactions.id, transactions.amount, transactions.user_id, transactions.created_at, groups.icon , groups.name as gname, users.name as uname').order(created_at: :desc)
+    s_str = 'transactions.name, transactions.id, transactions.amount, transactions.user_id, transactions.created_at'
+
+    s_str2 = ', groups.icon , groups.name as gname, users.name as uname'
+
+    @user_transactions = Transaction.where(user_id: current_user.id).joins(:group).joins(:user).select(s_str + s_str2)
+
+    @user_transactions = @user_transactions.order(created_at: :desc)
 
     @transaction_sum = @user_transactions.sum(:amount)
-    
   end
 
   # GET /transactions/1
   # GET /transactions/1.json
-  def show
-  end
+  def show; end
 
   # GET /transactions/new
   def new
@@ -22,22 +26,19 @@ class TransactionsController < ApplicationController
   end
 
   # GET /transactions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /transactions
   # POST /transactions.json
   def create
     @transaction = Transaction.new(transaction_params)
-    @transaction.user_id = current_user.id 
+    @transaction.user_id = current_user.id
 
     respond_to do |format|
       if @transaction.save
         format.html { redirect_to '/transactions', notice: 'Transaction was successfully created.' }
-        format.json { render :show, status: :created, location: @transaction }
       else
         format.html { render :new }
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -48,10 +49,8 @@ class TransactionsController < ApplicationController
     respond_to do |format|
       if @transaction.update(transaction_params)
         format.html { redirect_to '/transactions', notice: 'Transaction was successfully updated.' }
-        format.json { render :show, status: :ok, location: @transaction }
       else
         format.html { render :edit }
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -67,26 +66,33 @@ class TransactionsController < ApplicationController
   end
 
   def etransaction
-    @ext_user_transaction = Transaction.where(user_id: current_user.id, group_id: nil).joins(:user).select('transactions.name, transactions.id, transactions.amount, transactions.user_id, transactions.created_at, users.name as uname').order(created_at: :desc)
+    s_str = 'transactions.name, transactions.id, transactions.amount, transactions.user_id'
+    s_str2 = ', transactions.created_at, users.name as uname'
+    @ext_user_transaction = Transaction.where(user_id: current_user.id, group_id: nil).joins(:user)
+
+    @ext_user_transaction = @ext_user_transaction.select(s_str + s_str2)
+
+    @ext_user_transaction = @ext_user_transaction.order(created_at: :desc)
 
     @ext_transaction_sum = @ext_user_transaction.sum(:amount)
-
   end
 
   def members_transactions
-    @members = Transaction.joins(:user).select('users.name as uname, sum(transactions.amount) as tot_amount').group(:uname)
+    s_string = 'users.name as uname, sum(transactions.amount) as tot_amount'
+    @members = Transaction.joins(:user).select(s_string).group(:uname)
 
     @members_sum = Transaction.all.sum(:amount)
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_transaction
-      @transaction = Transaction.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def transaction_params
-      params.require(:transaction).permit(:name, :amount, :group_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_transaction
+    @transaction = Transaction.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def transaction_params
+    params.require(:transaction).permit(:name, :amount, :group_id)
+  end
 end
