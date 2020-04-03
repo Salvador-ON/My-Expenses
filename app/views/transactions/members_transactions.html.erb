@@ -1,0 +1,14 @@
+<div class="card">
+      <div class="card-body">
+        <span>Total Amount</span> <span> <%= @members_sum%></span>
+      </div>
+    </div>
+
+    <% @members.each do |member| %>
+  <div class="card">
+    <div class="card-body">
+        <span><%= member.uname %></span> <span> <%= member.tot_amount%></span>
+      </div>
+    </div>
+
+    <% end %>

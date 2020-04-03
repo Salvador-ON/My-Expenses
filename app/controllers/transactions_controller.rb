@@ -73,6 +73,12 @@ class TransactionsController < ApplicationController
 
   end
 
+  def members_transactions
+    @members = Transaction.joins(:user).select('users.name as uname, sum(transactions.amount) as tot_amount').group(:uname)
+
+    @members_sum = Transaction.all.sum(:amount)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_transaction

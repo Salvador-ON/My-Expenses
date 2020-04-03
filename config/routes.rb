@@ -2,11 +2,7 @@ Rails.application.routes.draw do
 
   resources :groups
 
-  resources :transactions do
-    collection do
-      get 'etransaction'
-    end
-  end
+  resources :transactions
 
   get 'pages/home'
   get 'pages/profile'
@@ -14,6 +10,7 @@ Rails.application.routes.draw do
   get '/newgroup', to: 'groups#new'
   get '/newtransaction', to: 'transactions#new'
   get '/etransactions', to: 'transactions#etransaction'
+  get '/memberstransactions', to: 'transactions#members_transactions'
 
 
 
