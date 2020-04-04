@@ -2,8 +2,8 @@
 
   <div class="row d-flex justify-content-between align-items-center w-100 mx-auto mt-3">
     <div class="col-12 d-flex justify-content-between align-items-center">
-    <i class="fas fa-bars h3 text-white"></i>
-    <span class="h1 text-white">Expense</span>
+    <a href="/profile"><i class="fas fa-bars h3 text-white"></i></a>
+    <span class="h1 text-white">Expenses</span>
     <i class="fas fa-search h3 text-white"></i>
     </div>
   
@@ -60,7 +60,14 @@
       </div>
       
     <% end %>
- 
- 
 
-<%= link_to 'New Transaction', new_transaction_path %>
+  <div class="container-fluid espace-button d-flex  align-items-center">
+  
+  </div>
+ 
+ <div class="container-fluid cont-button d-flex  align-items-center fixed-bottom">
+  <a href="/transactions/new" class='w-100 m-2'><div class=" d-flex justify-content-center align-items-center  m-4 border border-white">
+    <span class="h1 text-white py-4">ADD NEW</span>
+  </div></a>
+</div>
+
