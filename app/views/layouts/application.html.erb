@@ -10,21 +10,6 @@
   </head>
 
   <body>
-    
-  <%= flash_messages %>
-
-    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"text-dark" %>|
-    <%= link_to 'Profile', '/profile', class:"text-dark" %>|
-    <%= link_to 'Edit Profile', '/edit_profile', class:"text-dark" %>|
-    <%= link_to "Sign up", new_user_registration_path, class:"text-dark" %>|
-    
-    <%= link_to "Groups", '/groups', class:"text-dark" %>|
-    <%= link_to "New group", 'newgroup', class:"text-dark" %>|
-    <%= link_to 'New Transaction', new_transaction_path, class:"text-dark" %>|
-
-    <%= link_to "Transactions", '/transactions', class:"text-dark" %>|
-    <%= link_to "Ext Transactions", '/etransactions', class:"text-dark" %>|
-    
     <%= yield %>
   </body>
 </html>
