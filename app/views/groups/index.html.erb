@@ -1,28 +1,61 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid cont-background d-flex  align-items-center fixed-top">
 
-<h1>Groups</h1>
+  <div class="row no-gutters d-flex justify-content-between align-items-center w-100 mx-auto mt-3">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+    <a href="/profile"><i class="fas fa-bars h3 text-white"></i></a>
+    <span class="h3 text-white ml-2">Categories</span>
+    <i class="fas fa-search h3 text-white"></i>
+    </div>
+  
+  <div class="row d-flex justify-content-end align-items-center w-100 mx-auto">
+    <div class="mt-4 col-5 d-flex flex-column justify-content-center align-items-center">
+      <span class="h6 text-white text-center m-0">Most Recent</span>
+      <hr class= "border border-white m-1">
+    </div>
+
+    <div class="mt-4 d-flex flex-column justify-content-center align-items-center m-0">
+      <span class="h6 text-white text-center m-0">Most Ancient</span>
+      <hr class= "border m-1 hiden-line">
+    </div>
+  </div>
+  </div>
+
+
+</div>
+
+<div class="group-spacer">
+  
+</div>
 
     <% @groups.each do |group| %>
 
-      <div class="card mb-3" style="max-width: 340px;">
-        <div class="row no-gutters">
-          <div class="col-md-4 d-flex justify-content-center">
-            <i class="fas <%= group.icon %> fa-4x card-img align-self-center" ></i>
+
+      <div class="card mb-3 card-transaction mx-auto">
+        <div class="row">
+
+          <div class="col-5 d-flex justify-content-center">
+            <i class="p-1 fas <%= group.icon %> fa-6x card-img align-self-center text-primary h1 m-0" ></i>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title"> <%= group.name %></h5>
-              <p class="card-text">Created: <%= group.created_at.strftime('%d %b %Y') %></p>
-              <a href="/groups/<%= group.id %>" class="card-link">Access</a>
+
+          <div class="col-7 ">
+            <div class="card-body mx-0 px-3 py-2">
+            <div class= " w-100">
+              <p class="card-title h5 text-capitalize text-muted m-0"> <%= group.name %></p>
+              <p class="card-text h6 text-capitalize text-muted font-italic mt-4"> <%= group.created_at.strftime('%d %b %Y') %></p>
             </div>
-           </div>
+            </div>
+          </div>
         </div>
       </div>
-      
-      
     <% end %>
- 
-
-<br>
 
 <%= link_to 'New Group', new_group_path %>
+<div class="container-fluid espace-button d-flex  align-items-center">
+  
+  </div>
+ 
+ <div class="container-fluid cont-button d-flex align-items-center fixed-bottom">
+  <a href="/groups/new" class='w-100 m-2'><div class=" d-flex justify-content-center align-items-center  border border-white w-100 button-group">
+    <span class="h5 text-white m-0 py-2">ADD NEW</span>
+  </div></a>
+</div>

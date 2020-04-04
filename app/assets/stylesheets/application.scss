@@ -118,9 +118,25 @@ label {
 }
 
 .espace-button{
-  min-height: 24%;
+  min-height: 18%;
+  visibility: hidden;
 }
 
 .hiden-line {
   visibility: hidden;
+}
+
+.group-spacer {
+  margin-top: 22%;
+  visibility: hidden;
+}
+
+.button-transaction{
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.button-group{
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
