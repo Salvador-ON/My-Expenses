@@ -9,12 +9,12 @@
   
   <div class="row d-flex justify-content-end align-items-center w-100 mx-auto">
     <div class="mt-4 col-5 d-flex flex-column justify-content-center align-items-center">
-      <span class="h6 text-white text-center m-0">Most Recent</span>
+      <span class="h6 text-white text-center my-0">Most Recent</span>
       <hr class= "border border-white m-1">
     </div>
 
     <div class="mt-4 d-flex flex-column justify-content-center align-items-center m-0">
-      <span class="h6 text-white text-center my-0 mr-1 ml-1">Most Ancient</span>
+      <span class="h6 text-white text-center my-0 mr-2 ml-4">Most Ancient</span>
       <hr class= "border m-1 hiden-line">
     </div>
   </div>
@@ -30,10 +30,13 @@
   <%= flash_messages %>
 <div class="card mb-2  mx-2">
   <div class="card-body d-flex justify-content-between">
-        <span>Total Amount</span> <span> <%= @group_transaction_sum %></span>
+        <span class="h5 text-muted m-0">Total Amount</span> <span class="h5 text-dark font-weight-bolder m-0"> <%= @group_transaction_sum %></span>
       </div>
     </div>
 
+<div class="mx-3 my-2"><a class="btn btn-primary btn-block" href="/groups/<%="#{params[:id]}"%>/edit" role="button">Edit group</a>
+</div>
+    
     
 
 <% @group_transactions.each do |transaction| %>
@@ -49,7 +52,10 @@
             <div class="card-body mx-0 px-3 py-2">
             <div class= " w-100 align-items-center">
               <span class="card-title h5 text-capitalize text-muted m-0"> <%= transaction.name %></span> <br>
-              <span class="card-text h6 text-capitalize text-muted font-italic my-0"> C: <%= transaction.gname %></span>
+              <span class="card-text h6 text-capitalize text-muted font-italic my-0"> Category: <%= transaction.gname %>
+              </span>  <br>
+              <span class="card-text h6 text-capitalize text-muted font-italic my-0"> Created by: <%= transaction.uname %>
+              </span> 
             </div>
               
             <div class="d-flex mt-1">
@@ -70,11 +76,7 @@
       
     <% end %>
 
-    <div class="card mb-2  mx-2">
-  <div class="card-body d-flex justify-content-between">
-        <span><a class="btn btn-primary" href="#" role="button">Edit group</a></span> 
-      </div>
-    </div>
+    
 
 
   

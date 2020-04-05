@@ -100,7 +100,7 @@ label {
 }
 
 .cont-background{
-  min-height: 6%;
+  height: 110px;
   background: rgb(37, 103, 157)
 }
 
@@ -114,12 +114,12 @@ label {
 
 .cont-button{
   background: rgb(95, 181, 35);
-  min-height: 6%;
+  min-height: 76px;
 }
 
 .espace-button{
-  min-height: 11%;
-  visibility: hidden;
+  min-height: 60px;
+  //visibility: hidden;
 }
 
 .hiden-line {
@@ -127,7 +127,7 @@ label {
 }
 
 .group-spacer {
-  padding-top: 30%;
+  padding-top: 115px;
   visibility: hidden;
 }
 
