@@ -1,24 +1,51 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid cont-background d-flex  align-items-center fixed-top">
 
-<p>
-  <strong>Name:</strong>
-  <%= @transaction.name %>
-</p>
+  <div class="row no-gutters d-flex justify-content-between align-items-center w-100 mx-auto mt-3">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+      <a href="/profile"><i class="fas fa-bars h3 text-white"></i></a>
+      <span class="h3 text-white ml-2 ">Transaction</span>
+      <i class="fas fa-search h3 text-white"></i>
+    </div>
+  
+    <div class="row d-flex justify-content-center align-items-center w-100 mx-auto">
+      <div class="mt-4 col-12 d-flex flex-column justify-content-center align-items-center">
+        <span class="h6 text-white text-center my-0">Details</span>
+        <hr class= "border border-white m-1">
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @transaction.amount %>
-</p>
+<div class="sticky-container2">
+<div class="group-spacer">
+  </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @transaction.user %>
-</p>
+  <div class="card mb-3 card-transaction mx-auto">
+        <div class="row no-gutters">
 
-<p>
-  <strong>Group:</strong>
-  <%= @transaction.group %>
-</p>
+          <div class="col-3 d-flex justify-content-center">
+            <i class="p-1 fas <%= @transaction.group.icon %> fa-6x card-img align-self-center text-primary h1 m-0" ></i>
+          </div>
 
-<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
-<%= link_to 'Back', transactions_path %>
+          <div class="col-7 ">
+            <div class="card-body mx-0 px-3 py-2">
+            <div class= " w-100 align-items-center">
+              <span class="card-title h5 text-capitalize text-muted m-0"> <%= @transaction.name %></span> <br>
+              <span class="card-text h6 text-capitalize text-muted font-italic my-0"> Category: <%= @transaction.group.name %></span>
+            </div>
+              
+            <div class="d-flex mt-1">
+            <p class="card-text text-muted mb-0 h6"><%= @transaction.created_at.strftime('%d %b %Y') %></p>
+            <%= link_to "Edit", "/transactions/#{@transaction.id}/edit", class: "text-primary ml-4 h6 font-weight-bold" %>
+            </div>
+              
+            </div>
+          </div>
+
+          <div class="col-2  d-flex justify-content-center pt-1">
+              <span class="card-text h5 text-center mt-3 "> $<%= @transaction.amount %></span>
+            </div>
+
+        </div>
+
+      </div>

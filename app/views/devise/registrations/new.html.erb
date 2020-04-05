@@ -1,35 +1,49 @@
-<h2>Sign up</h2>
+<div class="background-profile container-fluid pt-4 ">
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
 
-    <%= f.input :avatar,
-                required: true%>
-
     <%= f.input :name,
                 required: true,
                 autofocus: true,
+                label_html: { class: 'text-white h4' }, 
                 input_html: { autocomplete: "name" }%>
                 
     <%= f.input :email,
                 required: true,
                 autofocus: true,
+                label_html: { class: 'text-white h4' }, 
                 input_html: { autocomplete: "email" }%>
 
     <%= f.input :password,
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: { class: 'text-white h4' } ,
+                label_html: { class: 'text-white h4' }, 
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                label_html: { class: 'text-white h4' }, 
+                input_html: { autocomplete: "new-password" }%>
   </div>
 
+  
+  <div class="text-white"> 
+   <%= f.input(:avatar, required: true, class: 'text_white', label:"Upload Profile Picture", label_html: { class: 'text-white h4' })%>
+
+   </div>
+
+
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up",
+                  class: 'btn btn-success btn-block' %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="mt-2">
+  <p class="text-white h5 text-center">If you are already a user, sign in</p>
+  <%= link_to "Sign in", new_user_session_path, class:"btn btn-info btn-block" %>
+  </div>
+
+</div>

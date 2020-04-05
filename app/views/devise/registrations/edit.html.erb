@@ -1,42 +1,69 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container-fluid cont-background d-flex  align-items-center fixed-top">
+
+  <div class="row no-gutters d-flex justify-content-between align-items-center w-100 mx-auto mt-3">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+      <a href="/profile"><i class="fas fa-bars h3 text-white"></i></a>
+      <span class="h3 text-white ml-2 ">Edit Profile</span>
+      <i class="fas fa-search h3 text-white"></i>
+    </div>
+  
+    <div class="row d-flex justify-content-center align-items-center w-100 mx-auto">
+      <div class="mt-4 col-12 d-flex flex-column justify-content-center align-items-center">
+        <span class="h6 text-white text-center my-0">Update Your Profile</span>
+        <hr class= "border border-white m-1">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sticky-container">
+<div class="group-spacer">
+  </div>
+  <%= flash_messages %>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs mx-2">
+    <%= f.input :email, required: true, autofocus: true, label_html: { class: 'text-dark h4' }%>
 
-    <%= f.input :avatar,
-                hint: "leave it blank if you don't want to change it",
-                required: false%>
-
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <%= f.input :name, required: true, autofocus: true %>
+    <%= f.input :name, required: true, autofocus: true, label_html: { class: 'text-dark h4' } %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
+    <div class="mx-2">
+    </div>
+    <%= f.input :password, label_html: { class: 'text-dark h4' },
+                hint: "Leave it blank if you don't want to change it",
+                required: false,
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation , label_html: { class: 'text-dark h4' },
+                required: false,
+                input_html: { autocomplete: "new-password" } %>
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+
+    <%= f.input :current_password, label_html: { class: 'text-dark h4' },
+                hint: "We need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+  
+    
+
+    <%= f.input(:avatar,
+                hint: "Leave it blank if you don't want to change it",
+                required: false, label:"Upload Profile Picture", label_html: { class: 'text-dark h4' })%>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <div class="form-actions mx-2">
+    <%= f.button :submit, "Update", class: 'btn btn-success btn-block' %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<div class="mx-2">
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p class="text-dark h4 mt-2">Delete Account</p> 
 
-<%= link_to "Back", :back %>
+<%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete,  class: 'btn btn-danger btn-block' %>
+</div>
+</div>

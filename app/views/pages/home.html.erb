@@ -1,44 +1,11 @@
-<div class="background-profile container-fluid ">
+<div class="background-profile container-fluid pt-4 ">
 
-  <div class="container-fluid pt-4 ">
-    <div class="row">
-      <div class="col-12  d-flex justify-content-center mt-4">
-        
-      </div>
-
-      <div class="col-12  d-flex justify-content-center">
-        
-      </div>
-
-      <div class="col-2  d-flex justify-content-center align-items-center mt-3 mb-3">
-        <span class="border border-white rounded-circle py-1"><i class="fas fa-file-invoice-dollar h2 text-white mx-3 my-2"></i></span> 
-      </div>
-      <div class="col-10  d-flex justify-content-start align-items-center border-bottom border-white">
-        <a href="/transactions" class="h2 m-1">My expenses</a>
-      </div>
-    
-      <div class="col-2  d-flex justify-content-center align-items-center mt-3 mb-3">
-        <span class="border border-white rounded-circle p-1"><i class="fas fa-layer-group h2 text-white mx-2  my-2 "></i></span> 
-      </div>
-      <div class="col-10  d-flex justify-content-start align-items-center border-bottom border-white">
-        <a href="/etransactions" class="h2 m-1">None categorised expenses</a>
-      </div>
-
-      <div class="col-2  d-flex justify-content-center align-items-center mt-3 mb-3">
-        <span class="border border-white rounded-circle p-1"><i class="fas fa-list-ul h2 text-white mx-2 my-2 "></i></span> 
-      </div>
-      <div class="col-10  d-flex justify-content-start align-items-center border-bottom border-white">
-        <a href="/groups" class="h2 m-1">Categories</a>
-      </div>
-
-      <div class="col-2  d-flex justify-content-center align-items-center mt-3 mb-3">
-        <span class="border border-white rounded-circle p-1"><i class="fas fa-user-friends h2 text-white mx-1 my-2 "></i></span> 
-      </div>
-      <div class="col-10  d-flex justify-content-start align-items-center border-bottom border-white">
-        <a href="/memberstransactions" class="h2 m-1">Members expenses</a>
-      </div>
-    </div>
-  </div>
+  <div class="jumbotron">
+  <h1 class="display-4">Welcome To My Expenses!</h1>
+  <p class="lead">Keep the record of all the expenses of your group</p>
+  <hr class="my-4">
+  <p>If you aleady have an account Sign In, if not Sign Up </p>
+</div>
 
   <div class="mx-3 my-4">
   <%= link_to "Sign in", new_user_session_path, class:"btn btn-success btn-block" %>

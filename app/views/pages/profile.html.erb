@@ -2,12 +2,18 @@
 
   <div class="container-fluid pt-4 ">
     <div class="row">
+     
       <div class="col-12  d-flex justify-content-center mt-4">
+        <a href="users/edit"> 
         <%=image_tag(current_user.avatar.url(:thumb))%>
+        </a>
       </div>
+      
 
       <div class="col-12  d-flex justify-content-center">
-        <p class="h2 text-white"><%=current_user.name%></p>
+        <a href="users/edit"> 
+        <span class="h2 text-white"><%=current_user.name%></span>
+        </a>
       </div>
 
       <div class="col-2  d-flex justify-content-center align-items-center mt-3 mb-3">
