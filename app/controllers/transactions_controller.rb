@@ -36,7 +36,11 @@ class TransactionsController < ApplicationController
 
     respond_to do |format|
       if @transaction.save
-        format.html { redirect_to '/transactions', notice: 'Transaction was successfully created.' }
+          if @transaction.group_id.nil?
+            format.html { redirect_to '/etransactions', notice: 'Transaction was successfully created.' }
+          else
+            format.html { redirect_to '/transactions', notice: 'Transaction was successfully created.' }
+          end
       else
         format.html { render :new }
       end
