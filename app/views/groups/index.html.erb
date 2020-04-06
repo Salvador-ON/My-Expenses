@@ -38,25 +38,26 @@
 
     <% @groups.each do |group| %>
 
-<a href="/groups/<%= group.id %>">
+
       <div class="card mb-3 card-transaction mx-auto">
-        <div class="row">
-
-          <div class="col-5 d-flex justify-content-center">
-            <i class="p-1 fas <%= group.icon %> fa-6x card-img align-self-center text-primary h1 m-0" ></i>
-          </div>
-
-          <div class="col-7 ">
-            <div class="card-body mx-0 px-3 py-2">
-            <div class= " w-100">
-              <p class="card-title h5 text-capitalize text-muted m-0"> <%= group.name %></p>
-              <p class="card-text h6 text-capitalize text-muted font-italic mt-4"> <%= group.created_at.strftime('%d %b %Y') %></p>
+        <a href="/groups/<%= group.id %>">
+          <div class="row">
+            <div class="col-5 d-flex justify-content-center">
+              <i class="p-1 fas <%= group.icon %> fa-6x card-img align-self-center text-primary h1 mx-0" ></i>
             </div>
+
+            <div class="col-7 ">
+              <div class="card-body mt-2 mx-0 px-3 py-2">
+                <div class= " w-100">
+                  <p class="card-title h5 text-capitalize text-muted m-0"> <%= group.name %></p>
+                  <p class="card-text h6 text-capitalize text-muted font-italic mt-4"> <%= group.created_at.strftime('%d %b %Y') %></p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </a>
+         <%= link_to 'Delete', group, method: :delete, data: {confirm: 'Are you sure?'}, class: "text-danger float-right my-0 pl-2 ml-4 h6 font-weight-bold #{group_is_empty?(group.id) }"%> 
       </div>
-      </a>
 
     <% end %>
 </div>

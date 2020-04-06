@@ -57,8 +57,10 @@
             </div>
               
             <div class="d-flex mt-1">
-            <p class="card-text text-muted mb-0 h6"><%= transaction.created_at.strftime('%d %b %Y') %></p>
-            <%= link_to "Edit", "/transactions/#{transaction.id}/edit", class: "text-primary ml-4 h6 font-weight-bold" %>
+            <p class="card-text text-muted mb-0 h6 "><%= transaction.created_at.strftime('%d-%m-%Y') %></p>
+            <%= link_to "Edit", "/transactions/#{transaction.id}/edit", class: "text-primary ml-3 h6 font-weight-bold" %>
+
+            <%= link_to 'Delete', transaction, method: :delete, data: {confirm: 'Are you sure?'}, class: "text-danger ml-3 h6 font-weight-bold" %>
             </div>
               
             </div>

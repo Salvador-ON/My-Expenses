@@ -1,18 +1,19 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_group, only: %i[show edit update destroy]
- 
+
   def index
     @groups = Group.all.order(name: :asc)
   end
 
   def show
-   
     @group_transactions = Transaction.grouped_display(params[:id])
-    
+
     @group_transactions = @group_transactions.order(created_at: :desc)
 
     @group_transaction_sum = @group_transactions.sum(:amount)
+
+
   end
 
   def new
