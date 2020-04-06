@@ -46,19 +46,17 @@ class TransactionsController < ApplicationController
   def destroy
     no_category = @transaction.group_id.nil?
     @transaction.destroy
-      if no_category
-        respond_to do |format|
+    if no_category
+      respond_to do |format|
         format.html { redirect_to '/etransactions', notice: 'Expense was successfully destroyed.' }
-        end
-
-      else
-        respond_to do |format|
-        format.html { redirect_to transactions_url, notice: 'Expense was successfully destroyed.' }
-        end
-      
       end
 
-    
+    else
+      respond_to do |format|
+        format.html { redirect_to transactions_url, notice: 'Expense was successfully destroyed.' }
+      end
+
+    end
   end
 
   def etransaction

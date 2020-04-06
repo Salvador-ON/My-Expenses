@@ -12,8 +12,6 @@ class GroupsController < ApplicationController
     @group_transactions = @group_transactions.order(created_at: :desc)
 
     @group_transaction_sum = @group_transactions.sum(:amount)
-
-
   end
 
   def new

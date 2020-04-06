@@ -19,5 +19,4 @@ class Transaction < ApplicationRecord
   scope :ext_display, ->(uid) { where(user_id: uid, group_id: nil).joins(:user).select(s_str + s_str3) }
 
   scope :by_user, -> { joins(:user).select(s_str4).group(:uname) }
-
 end
