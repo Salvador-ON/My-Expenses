@@ -1,11 +1,15 @@
-# CApstone Project Group our transactions
+# Capstone Project Group our transactions
 
 This is my Ruby on Rails Capstone Microverse Project By Salvador Olvera 
 This project was built in a 375 x 812 px resolution
 
-![](vg.gif)
+![](app/assets/images/vg.gif)
 
 # What it does
+
+# Live Demo
+
+[Live demo](https://warm-brushlands-71972.herokuapp.com/)
 
 - The user sign up logs in to the app.
 - The user is presented with a profile page that includes links to My expenses, none categorised expenses, categories, members expenses
