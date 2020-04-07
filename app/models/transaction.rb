@@ -6,7 +6,6 @@ class Transaction < ApplicationRecord
   before_save :titlelize_name
   has_many :transactions
 
-
   s_str = 'transactions.name, transactions.id, transactions.amount, transactions.user_id, transactions.created_at'
 
   s_str2 = ', groups.icon , groups.name as gname, users.name as uname'
@@ -24,7 +23,8 @@ class Transaction < ApplicationRecord
   scope :by_user, -> { joins(:user).select(s_str4).group(:uname) }
 
   private
+
   def titlelize_name
-    self.name = self.name.split.collect(&:capitalize).join(' ') if self.name && !self.name.blank?
+    self.name = name.split.collect(&:capitalize).join(' ') if name && !name.blank?
   end
 end
