@@ -1,0 +1,164 @@
+@import "bootstrap";
+@import 'font_awesome5_webfont';
+@import 'font_awesome5.css';
+
+html {
+  height: 100%;
+  min-width: 375px;
+}
+
+body {
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 375px;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: rgb(255, 255, 255);
+
+  &:visited {
+    color: rgb(255, 255, 255);
+  }
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+th {
+  padding-bottom: 5px;
+}
+
+td {
+  padding: 0 5px 7px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: block;
+}
+
+
+.background-profile{
+  width: 100%;
+  min-width: 375px;
+  min-height: 100%;
+  background: rgb(48,132,193);
+  background: linear-gradient(15deg, rgba(48,132,193,1) 0%, rgba(19,50,94,1) 100%);
+}
+
+.cont-background{
+  height: 110px;
+  background: rgb(37, 103, 157);
+  min-width: 375px;
+}
+
+.card-transaction{
+  width: 95%;
+  min-width: 375px;
+}
+
+.total-card-transaction{
+  margin-top: 35%;
+  min-width: 375px;
+}
+
+.cont-button{
+  background: rgb(95, 181, 35);
+  min-height: 76px;
+  min-width: 375px;
+  
+}
+
+.espace-button{
+  min-height: 60px;
+  min-width: 375px !important;
+}
+
+.hiden-line {
+  visibility: hidden;
+}
+
+.group-spacer {
+  padding-top: 115px;
+  visibility: hidden;
+}
+
+.button-transaction{
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.button-group{
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.text-grey{
+  color: lightgray;
+}
+
+.sticky-container{
+  min-height: 88%;
+  background-color: rgb(241, 243, 242);
+}
+
+.sticky-container2{
+  min-height: 100%;
+  background-color: rgb(241, 243, 242);
+}
