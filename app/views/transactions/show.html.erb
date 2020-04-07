@@ -17,35 +17,34 @@
 </div>
 
 <div class="sticky-container2">
-<div class="group-spacer">
+  <div class="group-spacer">
   </div>
 
   <div class="card mb-3 card-transaction mx-auto">
-        <div class="row no-gutters">
+    <div class="row no-gutters">
+      <div class="col-3 d-flex justify-content-center">
+        <i class="p-1 fas <%= @transaction.group.icon %> fa-6x card-img align-self-center text-primary h1 m-0" ></i>
+      </div>
 
-          <div class="col-3 d-flex justify-content-center">
-            <i class="p-1 fas <%= @transaction.group.icon %> fa-6x card-img align-self-center text-primary h1 m-0" ></i>
+      <div class="col-7 ">
+        <div class="card-body mx-0 px-3 py-2">
+          <div class= " w-100 align-items-center">
+            <span class="card-title h5 text-capitalize text-muted m-0"> <%= @transaction.name %></span> <br>
+            <span class="card-text h6 text-capitalize text-muted font-italic my-0"> Category: <%= @transaction.group.name %></span>
           </div>
-
-          <div class="col-7 ">
-            <div class="card-body mx-0 px-3 py-2">
-            <div class= " w-100 align-items-center">
-              <span class="card-title h5 text-capitalize text-muted m-0"> <%= @transaction.name %></span> <br>
-              <span class="card-text h6 text-capitalize text-muted font-italic my-0"> Category: <%= @transaction.group.name %></span>
-            </div>
               
-            <div class="d-flex mt-1">
+          <div class="d-flex mt-1">
             <p class="card-text text-muted mb-0 h6"><%= @transaction.created_at.strftime('%d %b %Y') %></p>
             <%= link_to "Edit", "/transactions/#{@transaction.id}/edit", class: "text-primary ml-4 h6 font-weight-bold" %>
-            </div>
-              
-            </div>
           </div>
-
-          <div class="col-2  d-flex justify-content-center pt-1">
-              <span class="card-text h5 text-center mt-3 "> $<%= @transaction.amount %></span>
-            </div>
-
+              
         </div>
-
       </div>
+
+      <div class="col-2  d-flex justify-content-center pt-1">
+        <span class="card-text h5 text-center mt-3 "> $<%= @transaction.amount %></span>
+      </div>
+
+    </div>
+  </div>
+</div>

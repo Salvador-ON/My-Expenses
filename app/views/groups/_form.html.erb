@@ -29,41 +29,40 @@
 </div>
 
 <div class="sticky-container2" >
-<div class="group-spacer">
+  <div class="group-spacer">
   </div>
 
-<%= simple_form_for(@group) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= simple_form_for(@group) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs mx-2"">
-    <%= f.input :name, required: true, label_html: { class: 'text-dark h4' } %>
+    <div class="form-inputs mx-2"">
+      <%= f.input :name, required: true, label_html: { class: 'text-dark h4' } %>
 
-    <%= f.label :icon, class: 'text-dark h4'%>
+      <%= f.label :icon, class: 'text-dark h4'%>
 
-    <div class="d-flex jsutify-contente-between flex-wrap">
-    <div class="mx-1 my-1"><i class="fas fa-glass-cheers fa-2x"></i><%= f.radio_button :icon ,"fa-glass-cheers"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-car fa-2x"></i><%= f.radio_button :icon ,"fa-car"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-plane fa-2x"></i><%= f.radio_button :icon ,"fa-plane"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-trash-alt fa-2x"></i><%= f.radio_button :icon ,"fa-trash-alt"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-laptop fa-2x"></i><%= f.radio_button :icon ,"fa-laptop"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-money-bill-wave fa-2x"></i><%= f.radio_button :icon ,"fa-money-bill-wave"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-mobile-alt fa-2x"></i><%= f.radio_button :icon ,"fa-mobile-alt"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-handshake fa-2x"></i><%= f.radio_button :icon ,"fa-handshake"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-shipping-fast fa-2x"></i><%= f.radio_button :icon ,"fa-shipping-fast"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-credit-card fa-2x"></i><%= f.radio_button :icon ,"fa-credit-card"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-receipt fa-2x"></i><%= f.radio_button :icon ,"fa-receipt"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-utensils fa-2x"></i><%= f.radio_button :icon ,"fa-utensils"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-pencil-alt fa-2x"></i><%= f.radio_button :icon ,"fa-pencil-alt"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-cog fa-2x"></i><%= f.radio_button :icon ,"fa-cog"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-globe fa-2x"></i><%= f.radio_button :icon ,"fa-globe"%></div>
-    <div class="mx-1 my-1"><i class="fas fa-shopping-cart fa-2x"></i><%= f.radio_button :icon ,"fa-shopping-cart"%></div>
+      <div class="d-flex jsutify-contente-between flex-wrap">
+        <div class="mx-1 my-1"><i class="fas fa-glass-cheers fa-2x"></i><%= f.radio_button :icon ,"fa-glass-cheers"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-car fa-2x"></i><%= f.radio_button :icon ,"fa-car"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-plane fa-2x"></i><%= f.radio_button :icon ,"fa-plane"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-trash-alt fa-2x"></i><%= f.radio_button :icon ,"fa-trash-alt"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-laptop fa-2x"></i><%= f.radio_button :icon ,"fa-laptop"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-money-bill-wave fa-2x"></i><%= f.radio_button :icon ,"fa-money-bill-wave"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-mobile-alt fa-2x"></i><%= f.radio_button :icon ,"fa-mobile-alt"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-handshake fa-2x"></i><%= f.radio_button :icon ,"fa-handshake"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-shipping-fast fa-2x"></i><%= f.radio_button :icon ,"fa-shipping-fast"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-credit-card fa-2x"></i><%= f.radio_button :icon ,"fa-credit-card"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-receipt fa-2x"></i><%= f.radio_button :icon ,"fa-receipt"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-utensils fa-2x"></i><%= f.radio_button :icon ,"fa-utensils"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-pencil-alt fa-2x"></i><%= f.radio_button :icon ,"fa-pencil-alt"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-cog fa-2x"></i><%= f.radio_button :icon ,"fa-cog"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-globe fa-2x"></i><%= f.radio_button :icon ,"fa-globe"%></div>
+        <div class="mx-1 my-1"><i class="fas fa-shopping-cart fa-2x"></i><%= f.radio_button :icon ,"fa-shopping-cart"%></div>
+      </div>
     </div>
-  </div>
 
-  <div class="form-actions mx-2 mt-2">
-    <%= f.button :submit,  class: 'btn btn-success btn-block' %>
-  </div>
-<% end %>
-
+    <div class="form-actions mx-2 mt-2">
+      <%= f.button :submit,  class: 'btn btn-success btn-block' %>
+    </div>
+  <% end %>
 </div>

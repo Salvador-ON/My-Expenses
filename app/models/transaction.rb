@@ -3,6 +3,9 @@ class Transaction < ApplicationRecord
   validates :amount, presence: true
   belongs_to :user
   belongs_to :group, optional: true
+  before_save :titlelize_name
+  has_many :transactions
+
 
   s_str = 'transactions.name, transactions.id, transactions.amount, transactions.user_id, transactions.created_at'
 
@@ -19,4 +22,9 @@ class Transaction < ApplicationRecord
   scope :ext_display, ->(uid) { where(user_id: uid, group_id: nil).joins(:user).select(s_str + s_str3) }
 
   scope :by_user, -> { joins(:user).select(s_str4).group(:uname) }
+
+  private
+  def titlelize_name
+    self.name = self.name.split.collect(&:capitalize).join(' ') if self.name && !self.name.blank?
+  end
 end

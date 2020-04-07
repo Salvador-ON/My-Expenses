@@ -17,35 +17,31 @@
         </span>
       </div>
       
-
       <div class="mt-4 col-10 d-flex flex-column justify-content-center align-items-center">
         <span class="h6 text-white text-center my-0">Add a new expense</span>
         <hr class= "border border-white m-1">
       </div>
-
-      
     </div>
   </div>
 </div>
 
 <div class="sticky-container2">
-<div class="group-spacer">
+  <div class="group-spacer">
   </div>
 
-<%= simple_form_for(@transaction) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= simple_form_for(@transaction) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs mx-2">
-    <%= f.input :name, required: true, label_html: { class: 'text-dark h4' } %>
-    <%= f.input :amount,required: true, label_html: { class: 'text-dark h4' } %>
-    <%= f.association :group, required: false, include_blank: "", label_html: { class: 'text-dark h4' } %>
-  </div>
+    <div class="form-inputs mx-2">
+      <%= f.input :name, required: true, label_html: { class: 'text-dark h4' } %>
+      <%= f.input :amount,required: true, label_html: { class: 'text-dark h4' } %>
+      <%= f.association :group, required: false, include_blank: "", label_html: { class: 'text-dark h4' } %>
+    </div>
 
 
-  <div class="form-actions mx-2">
-    <%= f.button :submit, class: 'btn btn-success btn-block'%>
-  </div>
-<% end %>
-
+    <div class="form-actions mx-2">
+      <%= f.button :submit, class: 'btn btn-success btn-block'%>
+    </div>
+  <% end %>
 </div>

@@ -4,6 +4,7 @@
 
 html {
   height: 100%;
+  min-width: 375px;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
   line-height: 18px;
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
+  min-width: 375px;
 }
 
 p, ol, ul, td {
@@ -94,6 +96,7 @@ label {
 
 .background-profile{
   width: 100%;
+  min-width: 375px;
   min-height: 100%;
   background: rgb(48,132,193);
   background: linear-gradient(15deg, rgba(48,132,193,1) 0%, rgba(19,50,94,1) 100%);
@@ -101,25 +104,30 @@ label {
 
 .cont-background{
   height: 110px;
-  background: rgb(37, 103, 157)
+  background: rgb(37, 103, 157);
+  min-width: 375px;
 }
 
 .card-transaction{
   width: 95%;
+  min-width: 375px;
 }
 
 .total-card-transaction{
   margin-top: 35%;
+  min-width: 375px;
 }
 
 .cont-button{
   background: rgb(95, 181, 35);
   min-height: 76px;
+  min-width: 375px;
+  
 }
 
 .espace-button{
   min-height: 60px;
-  //visibility: hidden;
+  min-width: 375px !important;
 }
 
 .hiden-line {
