@@ -2,8 +2,9 @@ require 'spec_helper'
 
 RSpec.describe 'Sing in Views', type: :feature do
   before(:each) do
-    u1=User.new({email:'test1@s.com', name:'Test1', password:'123456', password_confirmation:'123456'})
-    u1.avatar=Pathname.new(Rails.root.join("app/assets/images/actor_avatar_people_person_profile_user_voice_icon_123373.png")).open
+    u1 = User.new({ email: 'test1@s.com', name: 'Test1', password: '123456', password_confirmation: '123456' })
+    pic_path = 'app/assets/images/actor_avatar_people_person_profile_user_voice_icon_123373.png'
+    u1.avatar = Pathname.new(Rails.root.join(pic_path)).open
     u1.save
   end
 

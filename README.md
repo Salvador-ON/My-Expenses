@@ -1,7 +1,9 @@
 # CApstone Project Group our transactions
 
 This is my Ruby on Rails Capstone Microverse Project By Salvador Olvera 
+This project was built in a 375 x 812 px resolution
 
+![](vg.gif)
 
 # What it does
 
