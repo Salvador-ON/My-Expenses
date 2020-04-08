@@ -4,7 +4,6 @@ class Transaction < ApplicationRecord
   belongs_to :user
   belongs_to :group, optional: true
   before_save :titlelize_name
-  has_many :transactions
 
   s_str = 'transactions.name, transactions.id, transactions.amount, transactions.user_id, transactions.created_at'
 
