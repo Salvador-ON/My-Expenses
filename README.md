@@ -45,7 +45,7 @@ This project was built in a 375 x 812 px resolution
 - Twitter: [@Salvador Olvera_ON](https://twitter.com/Salvador_ON) 
 
 
-## � Contributing
+## Contributing
 
 This is a project for educational purposes only. We are not accepting contributions.
 
