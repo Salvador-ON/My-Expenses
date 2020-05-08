@@ -11,18 +11,18 @@ This project was built in a 375 x 812 px resolution
 
 # What it does
 
-- The user sign up logs in to the app.
-- The user is presented with a profile page that includes links to My expenses, none categorised expenses, categories, members expenses
+- The user signs up logs in to the app.
+- The user is presented with a profile page that includes links to My expenses, none categorized expenses, categories, members expenses
 
-- When user opens "My expenses" page. Total amount is displayed at the top, A list of all transactions created by logged-in user is displayed (sorted by most recent),Each transaction displays its name, amount and date, and an icon of the group it belongs to, An action button "Add new" is displayed.
+- When a user opens "My expenses" page. The total amount is displayed at the top, A list of all transactions created by the logged-in user is displayed (sorted by most recent), Each transaction displays its name, amount and date, and an icon of the group it belongs to, An action button "Add new" is displayed.
 
-- When user opens "None categorised expenses" page. A list of all transactions that are created by a logged-in user but not assigned to any group (sorted by most recent).
+- When the user opens the "None categorized expenses" page. A list of all transactions that are created by a logged-in user but not assigned to any group (sorted by most recent).
 
-- When user opens "Categories" page. A list of all groups is displayedin alphabetical order. Each group displays its icon, name and creation date.  Each group is clickable and opens "Categorie transactions" page.  An action button "Create new" is displayed.
+- When the user opens the "Categories" page. A list of all groups is displayed in alphabetical order. Each group displays its icon, name, and creation date.  Each group is clickable and opens the "Categories transactions" page.  An action button "Create new" is displayed.
 
--  When user opens the "Categorie transactions" page. A list of all transactions that belong to that group is displayed.
+-  When the user opens the "Categorie transactions" page. A list of all transactions that belong to that group is displayed.
 
-- When user opens "Create new group" or "Add new transaction" page. A form with all necessary fields is displayed
+- When the user opens "Create new group" or "Add new transaction" page. A form with all necessary fields is displayed
 
 
 # How to run this project
@@ -35,7 +35,13 @@ This project was built in a 375 x 812 px resolution
 - Go to http://127.0.0.1:3000/
 
 
-#### and deployed to GitHub
+## Test-driven development RSPEC
+
+The code includes unit testing using RSPEC. To start the test run the next line in your terminal:
+
+```
+bundle exec rspec
+```
 
 ## Author
 
