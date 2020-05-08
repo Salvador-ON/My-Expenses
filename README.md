@@ -20,9 +20,17 @@ This project was built in a 375 x 812 px resolution.
 
 - When the user opens the "Categories" page. A list of all groups is displayed in alphabetical order. Each group displays its icon, name, and creation date.  Each group is clickable and opens the "Categories transactions" page.  An action button "Create new" is displayed.
 
--  When the user opens the "Categorie transactions" page. A list of all transactions that belong to that group is displayed.
+- When the user opens the "Categorie transactions" page. A list of all transactions that belong to that group is displayed.
 
 - When the user opens "Create new group" or "Add new transaction" page. A form with all necessary fields is displayed.
+
+# Future Features
+
+- Users will be able to create and join specific groups.
+
+- Users will be the admin of the group that he creates.
+
+- Uses will be able to accept or decline group invitations.
 
 
 # How to run this project
