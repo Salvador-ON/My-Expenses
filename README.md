@@ -7,7 +7,7 @@ This project was built in a 375 x 812 px resolution.
 
 # Live Demo
 
-[Live demo](https://warm-brushlands-71972.herokuapp.com/)
+[Live demo](https://my-expenses-tracker-app.herokuapp.com)
 
 # What it does
 
