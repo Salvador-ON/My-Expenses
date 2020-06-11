@@ -12,7 +12,7 @@ This project was built in a 375 x 812 px resolution.
 # What it does
 
 - The user signs up logs in to the app.
-- The user is presented with a profile page that includes links to My expenses, none categorized expenses, categories, members' expenses.
+- The user is presented with a profile page that includes links to my expenses, none categorized expenses, categories, members' expenses.
 
 - When a user opens "My expenses" page. The total amount is displayed at the top, A list of all transactions created by the logged-in user is displayed (sorted by most recent), Each transaction displays it's name, amount and date, and an icon of the group it belongs to, An action button "Add new" is displayed.
 
